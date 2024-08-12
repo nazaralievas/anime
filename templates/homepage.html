@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="content">
-
+<!-- <div class="content">
   <table>
     <tr>
       <th>Оглавление</th>
@@ -14,12 +13,24 @@
       <tr>
         <td>{{ article.title }}</td>
         <td>{{ article.image }}</td>
-        <td>{{ article.text }}</td>
+        <td><a href="/article/{{ article.id }}">{{ article.text }}</a></td>
         <td>{{ article.date_created }}</td>
       </tr>
     {% endfor %}
   </table>
+</div> -->
 
+<div class="row">
+  {% for article in articles %}
+  <div class="col-lg-4">
+    <img src="{{ article.image }}">
+    <div class="box-element product">
+      <h6>{{ article.title }}</h6>
+      <div>{{ article.text }}</div>
+      <p>Создано: {{ article.date_created.date() }}</p>
+    </div>
+  </div>
+  {% endfor %}
 </div>
 
 {% endblock content %}

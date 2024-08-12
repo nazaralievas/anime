@@ -17,12 +17,10 @@ class Article(db.Model):
 with app.app_context():
     db.create_all()
 
-
 @app.route('/')
 def homepage():
     articles = Article.query.all()
     return render_template('homepage.html', articles=articles)
-
 
 @app.route('/add', methods=["POST", "GET"])
 def add():
@@ -35,6 +33,12 @@ def add():
         db.session.commit()
         return redirect('/')
     return render_template('add.html')
+
+
+@app.route('/article/<int:id>')
+def article(id):
+    article = Article.query.get(id)
+    return render_template('article.html', article=article)
 
 
 @app.route('/delete/<int:id>')

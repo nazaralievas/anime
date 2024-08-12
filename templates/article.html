@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{{ article.title }}
+{{ article.image }}
+{{ article.text }}
+{{ article.date_created.date() }}
+
+<a href="/delete/{{ article.id }}">Удалить</a>
+
+{% endblock %}

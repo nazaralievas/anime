@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action="/add" method="POST">
+    <input type="text" name="title" placeholder="Оглавление">
+    <input type="text" name="text" placeholder="Текст">
+    <input type="text" name="image" placeholder="Ссылка на картинку">
+    <input type="submit" placeholder="Добавить">
+</form>
+
+{% endblock %}

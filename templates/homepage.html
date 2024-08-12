@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+
+  <table>
+    <tr>
+      <th>Оглавление</th>
+      <th>Картинка</th>
+      <th>Текст</th>
+       <th>Дата создания</th>
+    </tr>
+    {% for article in articles %}
+      <tr>
+        <td>{{ article.title }}</td>
+        <td>{{ article.image }}</td>
+        <td>{{ article.text }}</td>
+        <td>{{ article.date_created }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+</div>
+
+{% endblock content %}

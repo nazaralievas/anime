@@ -19,14 +19,14 @@
     {% endfor %}
   </table>
 </div> -->
-
+<br>
 <div class="row">
   {% for article in articles %}
   <div class="col-lg-4">
-    <img src="{{ article.image }}">
+    <a href="/article/{{ article.id }}"><img src="{{ article.image }}"></a>
     <div class="box-element product">
       <h6>{{ article.title }}</h6>
-      <div>{{ article.text }}</div>
+      <a href="/article/{{ article.id }}">{{ article.text[:200] }}...</a>
       <p>Создано: {{ article.date_created.date() }}</p>
     </div>
   </div>

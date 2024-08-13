@@ -2,11 +2,14 @@
 
 {% block content %}
 
-{{ article.title }}
-{{ article.image }}
-{{ article.text }}
-{{ article.date_created.date() }}
+<h2>{{ article.title }}</h2>
+<div class="row">
+    <div class="col-lg-6"><img class="thumbnail" src="{{ article.image }}"></div>
+    <div class="col-lg-6">{{ article.text }}</div>
+</div>
 
-<a href="/delete/{{ article.id }}">Удалить</a>
+<span>Дата: {{ article.date_created.date() }}</span>
+<button><a href="/delete/{{ article.id }}">Удалить</a></button>
+<button><a href="/update/{{ article.id }}">Редактировать</a></button>
 
 {% endblock %}

@@ -53,7 +53,9 @@ def delete(id):
 def update(id):
     article = Article.query.get(id)
     if request.method == "POST":
+        article.title = request.form['title']
         article.text = request.form['text']
+        article.image = request.form['image']
         db.session.commit()
         return redirect('/')
 
